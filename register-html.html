@@ -1,0 +1,42 @@
+<style>
+#faceRegWrap * { box-sizing: border-box; }
+#faceRegWrap { max-width:680px; margin:auto; font-family:Arial,sans-serif; }
+.frm-box { background:#1a1a2e; padding:22px; border-radius:14px; }
+.frm-box h2 { color:#e94560; text-align:center; margin:0 0 16px; }
+.inp-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+.inp-row input { flex:1; min-width:130px; padding:10px; border-radius:8px;
+  border:1.5px solid #e94560; background:#16213e; color:#fff; font-size:14px; }
+.vid-wrap { position:relative; width:100%; background:#000; border-radius:10px; overflow:hidden; }
+.vid-wrap video { width:100%; display:block; border-radius:10px; }
+.vid-wrap canvas { position:absolute; top:0; left:0; width:100%; height:100%; }
+.btn-row { display:flex; gap:10px; justify-content:center; margin-top:14px; flex-wrap:wrap; }
+.btn-primary { background:#e94560; color:#fff; padding:11px 26px; border:none;
+  border-radius:8px; cursor:pointer; font-size:15px; font-weight:bold; }
+.btn-secondary { background:#0f3460; color:#fff; padding:11px 26px; border:none;
+  border-radius:8px; cursor:pointer; font-size:15px; font-weight:bold; }
+.btn-primary:disabled,.btn-secondary:disabled { opacity:0.5; cursor:not-allowed; }
+#regStatus { margin-top:12px; text-align:center; font-size:14px;
+  color:#a0ffa0; padding:8px; min-height:28px; }
+</style>
+
+
+
+<div id="faceRegWrap">
+  <div class="frm-box">
+    <h2>👤 Register Employee Face</h2>
+    <div class="inp-row">
+      <input id="regEmpName" type="text" placeholder="Employee Name *">
+      <input id="regEmpCode" type="text" placeholder="Employee Code *">
+      <input id="regEmpDept" type="text" placeholder="Department">
+    </div>
+    <div class="vid-wrap">
+      <video id="regVideo" autoplay muted playsinline></video>
+      <canvas id="regCanvas"></canvas>
+    </div>
+    <div class="btn-row">
+      <button id="btnStartCam" class="btn-primary">📷 Start Camera</button>
+      <button id="btnCapture"  class="btn-secondary" disabled>✅ Capture &amp; Register</button>
+    </div>
+    <div id="regStatus">⏳ Initialising…</div>
+  </div>
+</div>
